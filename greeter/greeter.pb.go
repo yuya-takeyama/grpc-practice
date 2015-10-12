@@ -3,7 +3,7 @@
 // DO NOT EDIT!
 
 /*
-Package helloworld is a generated protocol buffer package.
+Package greeter is a generated protocol buffer package.
 
 It is generated from these files:
 	greeter.proto
@@ -12,7 +12,7 @@ It has these top-level messages:
 	HelloRequest
 	HelloReply
 */
-package helloworld
+package greeter
 
 import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
@@ -64,7 +64,7 @@ func NewGreeterClient(cc *grpc.ClientConn) GreeterClient {
 
 func (c *greeterClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error) {
 	out := new(HelloReply)
-	err := grpc.Invoke(ctx, "/helloworld.Greeter/SayHello", in, out, c.cc, opts...)
+	err := grpc.Invoke(ctx, "/greeter.Greeter/SayHello", in, out, c.cc, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -94,7 +94,7 @@ func _Greeter_SayHello_Handler(srv interface{}, ctx context.Context, dec func(in
 }
 
 var _Greeter_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "helloworld.Greeter",
+	ServiceName: "greeter.Greeter",
 	HandlerType: (*GreeterServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
